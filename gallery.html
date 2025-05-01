@@ -3,31 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Gallery - Mahalakshmi Elite Events</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+    }
+    header {
+      background: #8e24aa;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 220px;
+      height: 100%;
+      background: linear-gradient(180deg, #ab47bc, #ff7043);
+      color: white;
+      padding-top: 2rem;
+      transition: left 0.3s ease-in-out;
+    }
+    .sidebar a {
+      display: block;
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .open {
+      left: 0;
+    }
+    main {
+      padding: 2rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <h1>Gallery</h1>
+    <h1>Event Gallery</h1>
   </header>
 
-  <nav id="sideMenu" class="side-menu">
+  <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="gallery.html">Gallery</a>
     <a href="book.html">Book Events</a>
     <a href="contact.html">Contact</a>
-  </nav>
-
-  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+  </div>
 
   <main>
-    <h2>Event Highlights</h2>
-    <p>Gallery coming soon with beautiful event memories!</p>
+    <h2>Our Event Highlights</h2>
+    <div class="gallery">
+      <img src="https://source.unsplash.com/featured/?wedding" alt="Wedding Event" />
+      <img src="https://source.unsplash.com/featured/?party" alt="Party Event" />
+      <img src="https://source.unsplash.com/featured/?event" alt="General Event" />
+      <img src="https://source.unsplash.com/featured/?decoration" alt="Decor" />
+      <img src="https://source.unsplash.com/featured/?music" alt="Music Show" />
+      <img src="https://source.unsplash.com/featured/?catering" alt="Catering" />
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+  </script>
+
 </body>
 </html>
