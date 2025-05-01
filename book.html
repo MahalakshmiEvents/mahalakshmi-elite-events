@@ -3,31 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Events</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Book an Event - Mahalakshmi Elite Events</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #e3f2fd;
+      color: #333;
+    }
+    header {
+      background: #1976d2;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-icon {
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 220px;
+      height: 100%;
+      background: linear-gradient(180deg, #1976d2, #42a5f5);
+      color: white;
+      padding-top: 2rem;
+      transition: left 0.3s ease-in-out;
+    }
+    .sidebar a {
+      display: block;
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .sidebar a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .open {
+      left: 0;
+    }
+    main {
+      padding: 2rem;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #1976d2;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1565c0;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <h1>Book Events</h1>
+    <h1>Book Your Event</h1>
   </header>
 
-  <nav id="sideMenu" class="side-menu">
+  <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="gallery.html">Gallery</a>
     <a href="book.html">Book Events</a>
     <a href="contact.html">Contact</a>
-  </nav>
-
-  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+  </div>
 
   <main>
-    <h2>Book Your Event</h2>
-    <p>Contact us directly or fill out the form (coming soon) to plan your elite event.</p>
+    <h2 style="text-align:center;">Reservation Form</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="example@mail.com" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="e.g. 9876543210" required>
+
+      <label for="eventType">Event Type</label>
+      <select id="eventType" required>
+        <option value="">Select</option>
+        <option>Wedding</option>
+        <option>Birthday</option>
+        <option>Corporate</option>
+        <option>Other</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" required>
+
+      <label for="message">Additional Details</label>
+      <textarea id="message" rows="4" placeholder="Any extra requests..."></textarea>
+
+      <button type="submit">Book Now</button>
+    </form>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("open");
+    }
+  </script>
+
 </body>
 </html>
