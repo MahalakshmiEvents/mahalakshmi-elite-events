@@ -1,102 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - Mahalakshmi Elite Events</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff0f5;
-      color: #333;
-    }
-    header {
-      background: #8e24aa;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .menu-icon {
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 220px;
-      height: 100%;
-      background: linear-gradient(180deg, #ab47bc, #ff7043);
-      color: white;
-      padding-top: 2rem;
-      transition: left 0.3s ease-in-out;
-    }
-    .sidebar a {
-      display: block;
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .sidebar a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    .open {
-      left: 0;
-    }
-    main {
-      padding: 2rem;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #ccc;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <h1>Event Gallery</h1>
+    <h1>Gallery</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="book.html">Book Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <div class="sidebar" id="sidebar">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="book.html">Book Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <main>
-    <h2>Our Event Highlights</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6" alt="Indian Wedding Ceremony" />
-      <img src="https://images.unsplash.com/photo-1587740896339-5b1d9e4e6d2a" alt="Traditional Indian Dance" />
-      <img src="https://images.unsplash.com/photo-1578926375603-5c3b1f0e1f3c" alt="Holi Festival Colors" />
-      <img src="https://images.unsplash.com/photo-1601044738232-9b1d9e4e6d2a" alt="Diwali Decorations" />
-      <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3" alt="Indian Cultural Performance" />
-      <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6" alt="Traditional Indian Attire" />
+  <main class="gallery">
+    <h2>Our Events</h2>
+    <div class="image-grid">
+      <img src="https://images.unsplash.com/photo-1571127239817-e03c02fb9d77?auto=format&fit=crop&w=800&q=80" alt="Traditional Indian Wedding">
+      <img src="https://images.unsplash.com/photo-1588097933407-79f1d5fa4cb2?auto=format&fit=crop&w=800&q=80" alt="Indian Cultural Festival">
+      <img src="https://images.unsplash.com/photo-1578916171727-b8f1ce05b3b3?auto=format&fit=crop&w=800&q=80" alt="Wedding Setup">
+      <img src="https://images.unsplash.com/photo-1530026186672-7445dc4f04fa?auto=format&fit=crop&w=800&q=80" alt="Stage Decoration">
     </div>
   </main>
 
-  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("open");
-    }
-  </script>
-
+  <footer>
+    <p>&copy; 2025 Mahalakshmi Elite Events Pvt Ltd</p>
+  </footer>
 </body>
 </html>
