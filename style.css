@@ -20,6 +20,7 @@ header {
   border: none;
   margin-right: 15px;
   color: #bfa046;
+  cursor: pointer;
 }
 
 h1 {
@@ -38,6 +39,11 @@ nav {
   width: 60%;
   padding: 10px;
   z-index: 1000;
+}
+
+/* Show nav when active */
+nav.active {
+  display: flex;
 }
 
 nav a {
