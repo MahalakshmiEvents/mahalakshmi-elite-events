@@ -1,16 +1,13 @@
-function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  sidebar.classList.toggle("active");
-}
-
-// Add event listener to the hamburger button
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("menuToggle").addEventListener("click", toggleSidebar);
+  const menuToggle = document.getElementById("menuToggle");
+  const sidebar = document.getElementById("sidebar");
 
-  // Optional: Close sidebar on clicking a link
-  document.querySelectorAll("#sidebar a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("sidebar").classList.remove("active");
+  if (menuToggle && sidebar) {
+    menuToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      console.log("Sidebar toggled");
     });
-  });
+  } else {
+    console.error("Menu toggle or sidebar element not found");
+  }
 });
