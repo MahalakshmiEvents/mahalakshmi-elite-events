@@ -3,27 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact - Mahalakshmi Elite Events</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Contact | Mahalakshmi Elite Events</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">Mahalakshmi Elite</div>
-    <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+    <button id="menuToggle">&#9776;</button>
+    <h1>Mahalakshmi Elite Events</h1>
   </header>
-  <aside id="sidebar">
+
+  <nav id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="gallery.html">Gallery</a>
-    <a href="book.html">Book Event</a>
-    <a href="contact.html" class="active">Contact</a>
-  </aside>
+    <a href="book.html">Book Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <main>
-    <h1>Contact Us</h1>
-    <p>Email: contact@mahalakshmielite.com</p>
-    <p>Phone: +91 99498 57099</p>
-    <p>Location: Plot No 6, H No 4-4-70/1, NR. Koundinya Nagar, 1.E.Nacharam. Uppal Hyderabad-500076, Telangana, India</p>
+    <section>
+      <h2>Contact Us</h2>
+      <p>Feel free to reach out with any questions or booking inquiries!</p>
+      <p>Email: mahalakshmieliteevents@gmail.com</p>
+      <p>Phone: +91 9949857099</p>
+      <form>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <br><br>
+
+        <input type="submit" value="Send Message">
+      </form>
+    </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
