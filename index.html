@@ -1,65 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahalakshmi Elite Events - Premium Event Planning</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="manifest" href="manifest.json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahalakshmi Elite Events</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="logo">Mahalakshmi Elite Events</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="book.html">Book</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <div class="sidebar" id="sidebar">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="book.html">Book Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+  <section class="hero">
+    <h1>Celebrate in Style</h1>
+    <p>Luxurious Events, Lasting Memories</p>
+    <a href="book.html" class="btn">Book Now</a>
+  </section>
 
-  <main>
-    <section class="hero">
-      <h1>Creating Unforgettable Moments</h1>
-      <p>Professional event planning services for weddings, corporate events, and special occasions</p>
-      <a href="book.html" class="btn btn-primary">Book Your Event</a>
-    </section>
-
-    <section>
-      <h2>Our Services</h2>
-      <div class="gallery">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf" alt="Wedding Planning" class="card-img">
-          <div class="card-body">
-            <h3>Wedding Planning</h3>
-            <p>Complete wedding planning and coordination services</p>
-          </div>
-        </div>
-        
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6" alt="Corporate Events" class="card-img">
-          <div class="card-body">
-            <h3>Corporate Events</h3>
-            <p>Professional corporate event management</p>
-          </div>
-        </div>
-        
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" alt="Birthday Parties" class="card-img">
-          <div class="card-body">
-            <h3>Birthday Parties</h3>
-            <p>Memorable birthday celebrations</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
+  <footer>
+    <p>&copy; 2025 Mahalakshmi Elite Events Pvt Ltd</p>
+  </footer>
 </body>
 </html>
