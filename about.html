@@ -1,84 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Mahalakshmi Elite Events</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffafc;
-      color: #333;
-    }
-    header {
-      background: #003366;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .menu-icon {
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 220px;
-      height: 100%;
-      background: linear-gradient(180deg, #ff69b4, #ffd700);
-      color: white;
-      padding-top: 2rem;
-      transition: left 0.3s ease-in-out;
-    }
-    .sidebar a {
-      display: block;
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .sidebar a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    .open {
-      left: 0;
-    }
-    main {
-      padding: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
+    <div class="logo">Mahalakshmi Elite Events</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <h1>About Us</h1>
   </header>
 
   <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="about.html" class="active">About Us</a>
     <a href="gallery.html">Gallery</a>
     <a href="book.html">Book Events</a>
     <a href="contact.html">Contact</a>
   </div>
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <main>
-    <h2>Who We Are</h2>
-    <p>Mahalakshmi Elite Events Pvt Ltd is a premier event planning company dedicated to creating unforgettable moments. With years of experience, our team specializes in weddings, corporate functions, birthday parties, and more.</p>
-    <p>We combine creativity, elegance, and attention to detail to turn your dream event into reality.</p>
+    <section class="hero">
+      <h1>About Mahalakshmi Elite Events</h1>
+      <p>Your trusted partner in creating memorable events</p>
+    </section>
+
+    <section>
+      <div class="card">
+        <div class="card-body">
+          <h2>Our Story</h2>
+          <p>Founded in 2025, Mahalakshmi Elite Events is an event planning service fueled by passion, creativity, and an unwavering commitment to excellence.</p>
+          
+          <h3>Our Mission</h3>
+          <p>To transform your vision into reality through innovative event solutions, meticulous planning, and flawless execution. We believe every event tells a story, and we're here to help you tell yours.</p>
+          
+          <h3>Our Team</h3>
+          <p>Our team consists of experienced event planners, creative designers, and skilled technicians who work together to deliver exceptional events. Each member brings unique expertise to ensure every detail is perfect.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("open");
-    }
-  </script>
-
+  <script src="app.js"></script>
 </body>
 </html>
