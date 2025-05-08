@@ -3,33 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book an Event - Mahalakshmi Elite Events</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Book Event | Mahalakshmi Elite Events</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <div class="logo">Mahalakshmi Elite</div>
-    <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
+    <button id="menuToggle">&#9776;</button>
+    <h1>Mahalakshmi Elite Events</h1>
   </header>
-  <aside id="sidebar">
+
+  <nav id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="gallery.html">Gallery</a>
-    <a href="book.html" class="active">Book Event</a>
+    <a href="book.html">Book Events</a>
     <a href="contact.html">Contact</a>
-  </aside>
+  </nav>
+
   <main>
-    <h1>Book Your Event</h1>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <input type="text" placeholder="Event Type (e.g., Wedding, Birthday)" required />
-      <input type="date" required />
-      <textarea placeholder="Additional Details"></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    <section>
+      <h2>Book Your Event</h2>
+      <p>Fill out the form below to book your event with us!</p>
+      <form>
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" name="eventType">
+          <option value="wedding">Wedding</option>
+          <option value="corporate">Corporate</option>
+          <option value="birthday">Birthday</option>
+        </select>
+        <br><br>
+
+        <label for="eventDate">Event Date:</label>
+        <input type="date" id="eventDate" name="eventDate" required>
+        <br><br>
+
+        <input type="submit" value="Submit">
+      </form>
+    </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
