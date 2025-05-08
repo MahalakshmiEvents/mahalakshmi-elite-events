@@ -43,14 +43,43 @@ function loadPage(page) {
       content = `
         <section>
           <h2>Book Your Event</h2>
-          <p>Ready to book your event with us? Click below to start!</p>
+          <p>Ready to book your event with us? We offer a variety of packages for every occasion. Whether it’s a wedding, corporate event, or birthday celebration, we’ve got you covered!</p>
+          <p>Fill out the form below to get started!</p>
+          <!-- Sample form -->
+          <form>
+            <label for="eventType">Event Type:</label>
+            <select id="eventType" name="eventType">
+              <option value="wedding">Wedding</option>
+              <option value="corporate">Corporate Event</option>
+              <option value="birthday">Birthday Party</option>
+            </select>
+            <br><br>
+            <label for="eventDate">Event Date:</label>
+            <input type="date" id="eventDate" name="eventDate" required>
+            <br><br>
+            <input type="submit" value="Submit">
+          </form>
         </section>`;
       break;
     case "contact":
       content = `
         <section>
           <h2>Contact Us</h2>
-          <p>Get in touch with us for event inquiries!</p>
+          <p>If you have any questions or would like to inquire about booking an event, feel free to contact us!</p>
+          <p>Email: info@mahalakshmievents.com</p>
+          <p>Phone: +1 234 567 890</p>
+          <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br><br>
+            <input type="submit" value="Send Message">
+          </form>
         </section>`;
       break;
     default:
