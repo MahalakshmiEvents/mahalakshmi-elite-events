@@ -1,13 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.getElementById("menuToggle");
+function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("active");
+}
 
-  if (menuToggle && sidebar) {
-    menuToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("active");
-      console.log("Sidebar toggled");
-    });
-  } else {
-    console.error("Menu toggle or sidebar element not found");
-  }
+// Optional: Close sidebar on clicking a link (for mobile experience)
+document.querySelectorAll("#sidebar a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("sidebar").classList.remove("active");
+  });
+});
+
+// Open the sidebar if you refresh the page and it was previously opened
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("sidebar");
+  const currentPage = window.location.pathname.split("/").pop(); // Get current page name
+  const links = document.querySelectorAll("#sidebar a");
+
+  // If the current page is one of the links in the sidebar, keep it open
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      sidebar.classList.add("active");
+    }
+  });
 });
