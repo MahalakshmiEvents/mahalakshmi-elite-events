@@ -1,85 +1,68 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 body {
-  background: #fdfdfd;
-  color: #2d2d2d;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background-color: #fff;
-  border-bottom: 2px solid #e6e6e6;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.logo {
-  font-size: 1.8rem;
-  color: #b58e0f;
-  font-weight: bold;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.2rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #b58e0f;
-}
-
-.hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(to right, #fff8e1, #fffdf7);
-}
-
-.hero h1 {
-  font-size: 3rem;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
   color: #333;
 }
 
-.hero p {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #666;
+header {
+  background: #fff;
+  color: #bfa046;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.5rem;
-  background: #b58e0f;
-  color: #fff;
-  border-radius: 30px;
+#menuToggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  margin-right: 15px;
+  color: #bfa046;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-right: 1px solid #eee;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 60%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+nav a {
+  padding: 10px;
+  color: #bfa046;
   text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s;
+  font-weight: bold;
 }
 
-.btn:hover {
-  background: #a07c0b;
+nav a:hover {
+  background: #f0e8d9;
 }
 
-footer {
-  margin-top: 4rem;
+main {
+  padding: 20px;
+}
+
+.hero {
   text-align: center;
-  padding: 1rem;
-  background: #f8f8f8;
-  color: #888;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.hero h2 {
+  color: #bfa046;
 }
