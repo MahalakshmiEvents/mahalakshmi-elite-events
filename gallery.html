@@ -1,83 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery - Mahalakshmi Elite Events</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <div class="logo">Mahalakshmi Elite Events</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo">Mahalakshmi Elite</div>
+    <div class="menu-toggle" onclick="toggleSidebar()">&#9776;</div>
   </header>
-
-  <div class="sidebar" id="sidebar">
+  <aside id="sidebar">
     <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="about.html">About</a>
     <a href="gallery.html" class="active">Gallery</a>
-    <a href="book.html">Book Events</a>
+    <a href="book.html">Book Event</a>
     <a href="contact.html">Contact</a>
-  </div>
-  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
+  </aside>
   <main>
-    <section class="hero">
-      <h1>Our Event Gallery</h1>
-      <p>Explore our past events and get inspired for your special occasion</p>
-    </section>
-
-    <section>
-      <div class="filter-buttons" style="margin-bottom: 1.5rem;">
-        <button class="btn" onclick="filterGallery('all')">All Events</button>
-        <button class="btn" onclick="filterGallery('wedding')">Weddings</button>
-        <button class="btn" onclick="filterGallery('corporate')">Corporate</button>
-        <button class="btn" onclick="filterGallery('birthday')">Birthdays</button>
-      </div>
-
-      <div class="gallery">
-        <a href="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf" data-lightbox="gallery" data-title="Wedding Event" class="gallery-item wedding">
-          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf" alt="Wedding Event">
-        </a>
-        
-        <a href="https://images.unsplash.com/photo-1531058020387-3be344556be6" data-lightbox="gallery" data-title="Corporate Event" class="gallery-item corporate">
-          <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6" alt="Corporate Event">
-        </a>
-        
-        <a href="https://images.unsplash.com/photo-1513151233558-d860c5398176" data-lightbox="gallery" data-title="Birthday Party" class="gallery-item birthday">
-          <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" alt="Birthday Party">
-        </a>
-        
-        <a href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" data-lightbox="gallery" data-title="Concert Event" class="gallery-item corporate">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30" alt="Concert Event">
-        </a>
-        
-        <a href="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" data-lightbox="gallery" data-title="Wedding Decor" class="gallery-item wedding">
-          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" alt="Wedding Decor">
-        </a>
-        
-        <a href="https://images.unsplash.com/photo-1527529482837-4698179dc6ce" data-lightbox="gallery" data-title="Birthday Celebration" class="gallery-item birthday">
-          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce" alt="Birthday Celebration">
-        </a>
-      </div>
-    </section>
+    <h1>Gallery</h1>
+    <div class="gallery-grid">
+      <img src="https://source.unsplash.com/featured/?indianwedding" alt="Indian Wedding">
+      <img src="https://source.unsplash.com/featured/?weddingdecor" alt="Decor">
+      <img src="https://source.unsplash.com/featured/?indianfestivals" alt="Festive Event">
+      <img src="https://source.unsplash.com/featured/?banquet" alt="Banquet">
+    </div>
   </main>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
-  <script src="app.js"></script>
-  <script>
-    function filterGallery(category) {
-      const items = document.querySelectorAll('.gallery-item');
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
