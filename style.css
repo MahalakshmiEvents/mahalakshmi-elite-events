@@ -82,5 +82,26 @@ main {
 
   main {
     margin-left: 0; /* No margin on mobile */
+  
+    /* Background colors for each page */
+body.home-page {
+  background-color: #fff8e1;
+}
+
+body.about-page {
+  background-color: #e0f7fa;
+}
+
+body.gallery-page {
+  background-color: #fce4ec;
+}
+
+body.book-page {
+  background-color: #e8f5e9;
+}
+
+body.contact-page {
+  background-color: #ede7f6;
+}
   }
 }
