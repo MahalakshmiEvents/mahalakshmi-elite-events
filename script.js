@@ -1,21 +1,20 @@
-// Sidebar toggle function for mobile
+// Sidebar toggle function for mobile (opens and closes sidebar)
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle("active");
 }
 
-// Event listener for sidebar links
+// Event listener for sidebar links to change content dynamically
 document.querySelectorAll("#sidebar a").forEach(link => {
   link.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent the default link behavior (page reload)
+    e.preventDefault(); // Prevent default behavior (which would normally reload the page)
     const page = link.getAttribute("data-page"); // Get the page name from the data attribute
-    loadPage(page); // Load the content of that page
+    loadPage(page); // Load the corresponding page content dynamically
   });
 });
 
-// Function to load the page content dynamically
+// Function to load the page content dynamically based on the link clicked
 function loadPage(page) {
-  // Example content for each page (You can load real HTML or content here)
   let content = "";
 
   switch (page) {
@@ -63,9 +62,12 @@ function loadPage(page) {
       break;
   }
 
-  // Insert the content into the main content area
+  // Update the main content area with the new content
   document.getElementById("content").innerHTML = content;
 }
+
+// Add event listener to the hamburger icon (three lines)
+document.getElementById("menuToggle").addEventListener("click", toggleSidebar);
 
 // Optionally: Load the default page (home) when the app loads
 document.addEventListener("DOMContentLoaded", () => {
