@@ -20,6 +20,7 @@ header {
   border: none;
   margin-right: 15px;
   color: #bfa046;
+  cursor: pointer;
 }
 
 h1 {
@@ -33,16 +34,16 @@ h1 {
   flex-direction: column;
   background: #fff;
   border-right: 1px solid #eee;
-  position: absolute;
+  position: fixed;
   top: 60px;
   left: 0;
-  width: 60%;
+  width: 200px;
   padding: 10px;
   z-index: 1000;
 }
 
 #sidebar.active {
-  display: flex;
+  display: flex; /* Show sidebar when active */
 }
 
 nav a {
@@ -58,6 +59,7 @@ nav a:hover {
 
 main {
   padding: 20px;
+  margin-left: 220px; /* This makes space for the sidebar */
 }
 
 .hero {
@@ -75,19 +77,10 @@ main {
 /* Mobile Styles */
 @media (max-width: 768px) {
   #sidebar {
-    display: none;
-    position: absolute;
-    width: 60%;
-    top: 60px;
-    height: auto;
-  }
-
-  #sidebar.active {
-    display: flex;
+    width: 60%; /* Sidebar takes up 60% of the screen */
   }
 
   main {
-    margin-left: 0;
-    padding-top: 60px;
+    margin-left: 0; /* No margin on mobile */
   }
 }
