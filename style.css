@@ -1,212 +1,85 @@
-/* Global Styles */
-:root {
-  --primary: #6a1b9a;
-  --primary-dark: #4a148c;
-  --primary-light: #9c4dcc;
-  --secondary: #ffab00;
-  --accent: #ff6d00;
-  --text: #333;
-  --text-light: #666;
-  --background: #f9f9f9;
-  --white: #ffffff;
-  --gray-light: #f0f0f0;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--background);
-  color: var(--text);
-  line-height: 1.6;
+  background: #fdfdfd;
+  color: #2d2d2d;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Header Styles */
 header {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 1rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-bottom: 2px solid #e6e6e6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  color: #b58e0f;
+  font-weight: bold;
 }
 
-.menu-icon {
-  font-size: 1.5rem;
-  cursor: pointer;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
 }
 
-/* Sidebar Navigation */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -280px;
-  width: 280px;
-  height: 100%;
-  background-color: var(--white);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  z-index: 1001;
-  padding-top: 70px;
-}
-
-.sidebar.open {
-  left: 0;
-}
-
-.sidebar a {
-  display: block;
-  padding: 1rem 1.5rem;
-  color: var(--text);
-  border-bottom: 1px solid var(--gray-light);
-  transition: all 0.2s;
-}
-
-.sidebar a:hover {
-  background-color: var(--gray-light);
-  color: var(--primary);
-}
-
-.sidebar a.active {
-  color: var(--primary);
-  font-weight: 600;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: none;
-}
-
-/* Main Content */
-main {
-  padding: 6rem 1.5rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
+nav a {
+  text-decoration: none;
+  color: #444;
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.3s ease;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
-  border: none;
+nav a:hover {
+  color: #b58e0f;
 }
 
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-}
-
-/* Forms */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-/* Cards */
-.card {
-  background: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 1.5rem;
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: var(--white);
   padding: 4rem 2rem;
   text-align: center;
-  border-radius: 8px;
-  margin-bottom: 2rem;
+  background: linear-gradient(to right, #fff8e1, #fffdf7);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #333;
 }
 
 .hero p {
+  margin-top: 1rem;
   font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+  color: #666;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  
-  .hero p {
-    font-size: 1rem;
-  }
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: #b58e0f;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #a07c0b;
+}
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 1rem;
+  background: #f8f8f8;
+  color: #888;
 }
