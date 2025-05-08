@@ -20,7 +20,6 @@ header {
   border: none;
   margin-right: 15px;
   color: #bfa046;
-  cursor: pointer;
 }
 
 h1 {
@@ -42,7 +41,10 @@ h1 {
   z-index: 1000;
 }
 
-/* Sidebar Links */
+#sidebar.active {
+  display: flex;
+}
+
 nav a {
   padding: 10px;
   color: #bfa046;
@@ -54,7 +56,6 @@ nav a:hover {
   background: #f0e8d9;
 }
 
-/* Main Content Area */
 main {
   padding: 20px;
 }
@@ -84,3 +85,9 @@ main {
   #sidebar.active {
     display: flex;
   }
+
+  main {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+}
