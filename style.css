@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -20,6 +21,7 @@ header {
   border: none;
   margin-right: 15px;
   color: #bfa046;
+  display: none; /* Hide hamburger on larger screens */
   cursor: pointer;
 }
 
@@ -28,24 +30,23 @@ h1 {
   margin: 0;
 }
 
-nav {
-  display: none;
+/* Sidebar Styles */
+#sidebar {
+  display: flex;
   flex-direction: column;
   background: #fff;
   border-right: 1px solid #eee;
-  position: absolute;
-  top: 60px;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 60%;
+  width: 250px;
+  height: 100vh;
   padding: 10px;
   z-index: 1000;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
-/* Show nav when active */
-nav.active {
-  display: flex;
-}
-
+/* Sidebar Links */
 nav a {
   padding: 10px;
   color: #bfa046;
@@ -57,7 +58,9 @@ nav a:hover {
   background: #f0e8d9;
 }
 
+/* Main Content Area */
 main {
+  margin-left: 250px; /* Push content to the right of the sidebar */
   padding: 20px;
 }
 
@@ -71,4 +74,29 @@ main {
 
 .hero h2 {
   color: #bfa046;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;  /* Make sidebar full-width on mobile */
+    position: fixed; /* Keep sidebar fixed on top */
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1001; /* Sidebar is on top */
+    box-shadow: none;
+    display: flex; /* Ensure it's always visible */
+  }
+
+  /* Adjust main content to be under the sidebar */
+  main {
+    margin-left: 0;
+    padding-top: 60px;  /* Add padding to avoid content under the header */
+  }
+
+  /* Show hamburger icon on small screens */
+  #menuToggle {
+    display: block; /* Only show on mobile screens */
+  }
 }
