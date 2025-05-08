@@ -1,135 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book an Event - Mahalakshmi Elite Events</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #e3f2fd;
-      color: #333;
-    }
-    header {
-      background: #1976d2;
-      color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .menu-icon {
-      cursor: pointer;
-      font-size: 1.5rem;
-    }
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 220px;
-      height: 100%;
-      background: linear-gradient(180deg, #1976d2, #42a5f5);
-      color: white;
-      padding-top: 2rem;
-      transition: left 0.3s ease-in-out;
-    }
-    .sidebar a {
-      display: block;
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .sidebar a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    .open {
-      left: 0;
-    }
-    main {
-      padding: 2rem;
-    }
-    form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.5rem 0 1rem 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background: #1976d2;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #1565c0;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
+    <div class="logo">Mahalakshmi Elite Events</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <h1>Book Your Event</h1>
   </header>
 
   <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="gallery.html">Gallery</a>
-    <a href="book.html">Book Events</a>
+    <a href="book.html" class="active">Book Events</a>
     <a href="contact.html">Contact</a>
   </div>
+  <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
   <main>
-    <h2 style="text-align:center;">Reservation Form</h2>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter your full name" required>
+    <section class="hero">
+      <h1>Book Your Event</h1>
+      <p>Fill out the form below and we'll get back to you within 24 hours</p>
+    </section>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="example@mail.com" required>
-
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" placeholder="e.g. 9876543210" required>
-
-      <label for="eventType">Event Type</label>
-      <select id="eventType" required>
-        <option value="">Select</option>
-        <option>Wedding</option>
-        <option>Birthday</option>
-        <option>Corporate</option>
-        <option>Other</option>
-      </select>
-
-      <label for="date">Preferred Date</label>
-      <input type="date" id="date" required>
-
-      <label for="message">Additional Details</label>
-      <textarea id="message" rows="4" placeholder="Any extra requests..."></textarea>
-
-      <button type="submit">Book Now</button>
-    </form>
+    <section>
+      <div class="card">
+        <div class="card-body">
+          <form id="bookingForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="eventType">Event Type</label>
+              <select id="eventType" class="form-control" required>
+                <option value="">Select Event Type</option>
+                <option>Wedding</option>
+                <option>Corporate Event</option>
+                <option>Birthday Party</option>
+                <option>Anniversary</option>
+                <option>Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="date">Event Date</label>
+              <input type="date" id="date" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="guests">Estimated Number of Guests</label>
+              <input type="number" id="guests" class="form-control" placeholder="Approximate number" min="1">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your event..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById("sidebar");
-      sidebar.classList.toggle("open");
-    }
-  </script>
-
+  <script src="app.js"></script>
 </body>
 </html>
